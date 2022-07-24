@@ -1,4 +1,4 @@
-# cog-solana-token
+# create-solana-token
 
 Create a new Solana fungible token using command-line tools and scripts.
 
@@ -94,9 +94,7 @@ We'll pay in SOL, so will use our own wallet public key, as shown below with `TH
 
     npx @bundlr-network/client upload token_image.jpeg -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
-The image was uploaded to:
-
-    <https://arweave.net/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U>
+The image was uploaded to <https://arweave.net/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U>.
 
 View [transaction on ViewBlock.io](https://viewblock.io/arweave/tx/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U).
 
@@ -108,9 +106,7 @@ Then upload the metadata file
 
     npx @bundlr-network/client upload token_metadata.json -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
-The token metadata was uploaded to:
-
-    https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk
+The token metadata was uploaded to <https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk>.
 
 View [transaction on ViewBlock.io](https://viewblock.io/arweave/tx/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk).
 
