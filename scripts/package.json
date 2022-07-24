@@ -1,0 +1,17 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "Tools for working with Solana tokens",
+  "main": "index.js",
+  "scripts": {
+    "create-metadata": "ts-node create-metadata.ts"
+  },
+  "author": "Brian Gershon <briangershon@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.13.1",
+    "@metaplex-foundation/mpl-token-metadata": "^2.2.2",
+    "@solana/web3.js": "^1.50.0",
+    "ts-node": "^10.9.1"
+  }
+}

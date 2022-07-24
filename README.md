@@ -129,9 +129,19 @@ The token metadata was uploaded to:
 
     https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk
 
-### Upload the new metadata
+### Create initial token metadata
 
-You can update metadata via <https://token-creator-lac.vercel.app/update>.
+    # metadata is currently hardcoded in script
+    cd scripts
+    npm run create-metadata
+
+### Update token metadata
+
+You have two choices.
+
+1. Use script, but change script to call `updateMetadata()`
+
+2. You can update metadata via <https://token-creator-lac.vercel.app/update>. This method won't create initial metadata after token is created, hence script above to do creation.
 
 ```
 Token Mint Address: 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
