@@ -1,8 +1,10 @@
 # create-solana-token
 
+<img src="token_image.png" width="200" alt="Image of token which is a Buoy" />
+
 Create a new Solana fungible token using command-line tools and scripts.
 
-Token image was created from a photo by <https://unsplash.com/@opticonor>.
+This token symbol is `BUOY` and image was created from a photo by <https://unsplash.com/@alexb>.
 
 The steps for creating a token are:
 
@@ -92,23 +94,19 @@ We'll pay in SOL, so will use our own wallet public key, as shown below with `TH
 
 ### Upload token image
 
-    npx @bundlr-network/client upload token_image.jpeg -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
+    npx @bundlr-network/client upload token_image.png -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
-The image was uploaded to <https://arweave.net/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U>.
-
-View [transaction on ViewBlock.io](https://viewblock.io/arweave/tx/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U).
+The image was uploaded to <https://arweave.net/nWYCzV8L44EozywXUqrRO2n7Wxa72q6tOe1H7LkBu0s>.
 
 ### Edit and upload token_metadata.json
 
-First add the token_image.jpeg URL to `token_metadata.json` file, which in this case the URL is <https://arweave.net/kNLuCPdnwvrlxBwCE-y1vlVxH5nKqiTorTYMJMXA39U>
+First add the token_image.png Arweave URL (from above) to `token_metadata.json` file.
 
 Then upload the metadata file
 
     npx @bundlr-network/client upload token_metadata.json -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
-The token metadata was uploaded to <https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk>.
-
-View [transaction on ViewBlock.io](https://viewblock.io/arweave/tx/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk).
+The token metadata was uploaded to <https://arweave.net/Wtvd6MvCBO_ZXbLcR20mHDhBx2Bwpx_xZSb3OM_cDzg>.
 
 ### Create initial token metadata
 
@@ -124,20 +122,9 @@ You have two choices.
 
 2. You can update metadata via <https://token-creator-lac.vercel.app/update>. This method won't create initial metadata after token is created, hence needing our script. Note: you'll **first need to import your filesystem wallet** into your Phantom wallet so you have permissions to update metadata.
 
-```
-Token Mint Address: 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
-Token Name: COG Token
-Symbol: GOG
-Metadata Url: https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk
-```
+Find the token metadata here in [token_metadata.json](./token_metadata.json).
 
 ## Try transferring tokens to another wallet
-
-Let's add this new token to your wallet (and create an account for the token balance too, which will require some test SOL). For example, in Phantom wallet, make sure you're on `mainnet-beta` then click on `Manage token list` within first tab (`$`) and here's the info you need:
-
-    Mint address: 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
-    Name: COG Token
-    Symbol: COG
 
 Let's transfer 50 coins to your wallet:
 

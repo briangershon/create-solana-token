@@ -119,7 +119,7 @@ console.log("Token update authority:", keypair.publicKey.toString());
 createMetadata({
   publicKey: keypair.publicKey,
   tokenMint: "7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD",
-  tokenName: "COG Token",
-  tokenSymbol: "COG",
-  tokenUrl: "https://arweave.net/OAQCAVuN118P78EkUuDv0rlE2XrBnBLE202ngYESXEk",
+  tokenName: "BUOY",
+  tokenSymbol: "BUOY",
+  tokenUrl: "https://arweave.net/Wtvd6MvCBO_ZXbLcR20mHDhBx2Bwpx_xZSb3OM_cDzg",
 });
