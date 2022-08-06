@@ -1,21 +1,20 @@
 # create-solana-token
 
-<img src="token_image.png" width="200" alt="Image of token which is a Buoy" />
+<img src="./token/token_image.png" width="200" alt="Image of token which is a Buoy" />
 
-Create a new Solana fungible token using command-line tools and scripts.
+## Overview
 
-This token symbol is `BUOY` and image was created from a photo by <https://unsplash.com/@alexb>.
+Here are the steps for creating a new Solana fungible token using command-line tools and scripts.
+
+The example token created here is called `BUOY` and the final version exists live on Solana at [7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD](https://explorer.solana.com/address/7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD). The token image was created from a photo by <https://unsplash.com/@alexb>.
 
 The steps for creating a token are:
 
 - Create a token and supply it with an initial number of tokens
-- Host token image and metadata on Arweave
-- Add metadata to token (and can update later) (script written in this repo)
-- Transfer tokens to others
+- Host token image and metadata, in this case using [Arweave](https://www.arweave.org/)
+- Add (and update) metadata for token via the script written in this repo
 
 ## Getting Started
-
-Token creation instructions are based on the Solana Token CLI example: [Solana's Token Program](https://spl.solana.com/token)
 
 ### Install tools
 
@@ -94,24 +93,23 @@ We'll pay in SOL, so will use our own wallet public key, as shown below with `TH
 
 ### Upload token image
 
-    npx @bundlr-network/client upload token_image.png -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
+    npx @bundlr-network/client upload token/token_image.png -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
 The image was uploaded to <https://arweave.net/nWYCzV8L44EozywXUqrRO2n7Wxa72q6tOe1H7LkBu0s>.
 
 ### Edit and upload token_metadata.json
 
-First add the token_image.png Arweave URL (from above) to `token_metadata.json` file.
+First add the token_image.png Arweave URL (from above) to `token/token_metadata.json` file.
 
 Then upload the metadata file
 
-    npx @bundlr-network/client upload token_metadata.json -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
+    npx @bundlr-network/client upload token/token_metadata.json -h https://node1.bundlr.network -w ~/.config/solana/my-mainnet-wallet.json -c solana
 
 The token metadata was uploaded to <https://arweave.net/Wtvd6MvCBO_ZXbLcR20mHDhBx2Bwpx_xZSb3OM_cDzg>.
 
 ### Create initial token metadata
 
     # metadata is currently hardcoded in script
-    cd scripts
     npm run create-metadata
 
 ### Update token metadata
@@ -122,7 +120,7 @@ You have two choices.
 
 2. You can update metadata via <https://token-creator-lac.vercel.app/update>. This method won't create initial metadata after token is created, hence needing our script. Note: you'll **first need to import your filesystem wallet** into your Phantom wallet so you have permissions to update metadata.
 
-Find the token metadata here in [token_metadata.json](./token_metadata.json).
+Find the token metadata here in [token_metadata.json](./token/token_metadata.json).
 
 ## Try transferring tokens to another wallet
 
@@ -136,5 +134,5 @@ You should now see those 50 tokens appear in your wallet. In Phantom, you'll see
 
 ## Resources
 
-- [Solana's Token Program](https://spl.solana.com/token)
+- Solana's Token Program and Documentation: [Solana's Token Program](https://spl.solana.com/token)
 - [Token Creator source code](https://github.com/jacobcreech/Token-Creator)

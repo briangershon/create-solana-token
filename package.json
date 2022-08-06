@@ -1,10 +1,10 @@
 {
   "name": "scripts",
-  "version": "1.0.0",
-  "description": "Tools for working with Solana tokens",
+  "version": "1.0.1",
+  "description": "Tools for creating Solana fungible tokens",
   "main": "index.js",
   "scripts": {
-    "create-metadata": "ts-node create-metadata.ts"
+    "create-metadata": "ts-node scripts/create-metadata.ts"
   },
   "author": "Brian Gershon <briangershon@users.noreply.github.com>",
   "license": "MIT",
