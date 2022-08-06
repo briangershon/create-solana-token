@@ -24,3 +24,7 @@ To verify, run `solana config get` and you should have a config that has these s
 
     RPC URL: https://api.mainnet-beta.solana.com
     Keypair Path: /Users/USERNAME_HERE/.config/solana/cog-coin.json
+
+To view your public key from the keypair
+
+    solana-keygen pubkey
