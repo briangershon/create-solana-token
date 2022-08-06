@@ -22,7 +22,7 @@ Install latest version of Rust using <https://rustup.rs/>. We're using `rustc 1.
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-Let's deploy to mainnet-beta:
+Let's deploy to `mainnet-beta` (or you can choose `devnet`):
 
     solana config set --url https://api.mainnet-beta.solana.com
 
@@ -36,7 +36,7 @@ Then choose that keypair:
 
     solana config set --keypair ~/.config/solana/cog-coin.json
 
-Now run `solana config get` and you should have a config that has these settings to RPC URL and Keypair Path:
+To verify, run `solana config get` and you should have a config that has these settings to RPC URL and Keypair Path:
 
     RPC URL: https://api.mainnet-beta.solana.com
     Keypair Path: /Users/USERNAME_HERE/.config/solana/cog-coin.json
@@ -122,9 +122,11 @@ You have two choices.
 
 Find the token metadata here in [token_metadata.json](./token/token_metadata.json).
 
-## Try transferring tokens to another wallet
+## Testing Token
 
-Let's transfer 50 coins to your wallet:
+### Transfer tokens to another wallet
+
+Let's transfer 50 tokens to your wallet:
 
     spl-token transfer 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD 50 YOUR_WALLET_PUBLIC_KEY_HERE
 
