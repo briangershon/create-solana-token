@@ -1,4 +1,4 @@
-# Setup Team Approach
+# Setup Team Management of Token
 
 Once a token is created you may need to:
 

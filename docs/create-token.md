@@ -12,7 +12,7 @@ No supply to start with.
 
 Set an environment variable to use later:
 
-    export $TOKEN_MINT_ADDRESS=7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
+    export TOKEN_MINT_ADDRESS=7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
 
 ## Create a supply of tokens
 

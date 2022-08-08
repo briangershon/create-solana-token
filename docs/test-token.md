@@ -8,7 +8,7 @@
 
 First, let's set an environment variable for the wallet we want to use to send tokens to.
 
-    export $YOUR_WALLET_PUBLIC_KEY_HERE=deadbeef....
+    export YOUR_WALLET_PUBLIC_KEY_HERE=deadbeef....
 
 Let's transfer 50 tokens to your wallet:
 
