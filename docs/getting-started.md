@@ -14,16 +14,16 @@ Let's deploy to `mainnet-beta` (or you can choose `devnet`):
 
 Create your keypair if you don't already have one. See <https://docs.solana.com/cli/conventions#keypair-conventions>.
 
-    solana-keygen new --outfile ~/.config/solana/cog-coin.json
+    solana-keygen new --outfile ~/.config/solana/coin-keypair.json
 
 Then choose that keypair:
 
-    solana config set --keypair ~/.config/solana/cog-coin.json
+    solana config set --keypair ~/.config/solana/coin-keypair.json
 
 To verify, run `solana config get` and you should have a config that has these settings to RPC URL and Keypair Path:
 
     RPC URL: https://api.mainnet-beta.solana.com
-    Keypair Path: /Users/USERNAME_HERE/.config/solana/cog-coin.json
+    Keypair Path: /Users/USERNAME_HERE/.config/solana/coin-keypair.json
 
 To view your public key from the keypair
 

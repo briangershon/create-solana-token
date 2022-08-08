@@ -110,7 +110,7 @@ async function updateMetadata({
 }
 
 const privateKeyFile = fs.readFileSync(
-  "/Users/brian/.config/solana/cog-coin.json"
+  "/Users/brian/.config/solana/coin-keypair.json"
 );
 let privateKeySeed = JSON.parse(privateKeyFile.toString()).slice(0, 32);
 let keypair = Keypair.fromSeed(Uint8Array.from(privateKeySeed));
