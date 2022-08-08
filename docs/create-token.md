@@ -10,11 +10,15 @@ Here's the token that was created in this example:
 
 No supply to start with.
 
+Set an environment variable to use later:
+
+    export $TOKEN_MINT_ADDRESS=7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
+
 ## Create a supply of tokens
 
 Create an account to hold the token supply balance:
 
-    spl-token create-account 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
+    spl-token create-account $TOKEN_MINT_ADDRESS
 
 Which created this account:
 
@@ -22,10 +26,10 @@ Which created this account:
 
 Mint 100 tokens
 
-    spl-token mint 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD 100
+    spl-token mint $TOKEN_MINT_ADDRESS 100
 
 Total supply and this accounts balance should be both `100`:
 
-    spl-token supply 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
+    spl-token supply $TOKEN_MINT_ADDRESS
 
 You can also view total supply in Solana Explorer by visiting <https://explorer.solana.com/address/7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD>
