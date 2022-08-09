@@ -1,7 +1,5 @@
 # Getting Started
 
-These instructions tested on MacOS.
-
 ## Install tools
 
 1. [Install the Solana Tool Suite](https://docs.solana.com/cli/install-solana-cli-tools)
