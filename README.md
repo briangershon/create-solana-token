@@ -12,13 +12,22 @@ The example token created here is called `BUOY` and the final version exists liv
 
 The token image was created from a photo by <https://unsplash.com/@alexb>.
 
-## Steps for Creating Token
+## Steps for creating new token
 
 - [Getting started](./docs/getting-started.md) - install tools and choose keypair
 - [Create token](./docs/create-token.md) and mint them
 - [Add metadata](./docs/add-metadata.md) for your token and host on Arweave
 - [Test token](./docs/test-token.md)
+
+## Steps for creating a multisig mint authority for token
+
 - [Setup team management of token](./docs/setup-team-management.md) using multisig approach
+
+## Setup for multsig signers
+
+Scenario: You've been asked to be one of the official approvers of token minting.
+
+You can generate your keypair and public key by following [Getting started](./docs/getting-started.md).
 
 ## Credits
 
