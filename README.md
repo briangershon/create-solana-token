@@ -14,13 +14,15 @@ The token image was created from a photo by <https://unsplash.com/@alexb>.
 
 ## Steps for Creating Token
 
-- [Getting Started](./docs/getting-started.md) - install tools and choose keypair
+- [Getting started](./docs/getting-started.md) - install tools and choose keypair
 - [Create token](./docs/create-token.md) and mint them
 - [Add metadata](./docs/add-metadata.md) for your token and host on Arweave
 - [Test token](./docs/test-token.md)
-- [Setup Team Management of Token](./docs/setup-team-management.md)
+- [Setup team management of token](./docs/setup-team-management.md) using multisig approach
 
-## Resources
+## Credits
+
+These useful resources served as an initial foundation for docs and scripts in this repo:
 
 - Solana's Token Program and Documentation: [Solana's Token Program](https://spl.solana.com/token)
 - [Token Creator source code](https://github.com/jacobcreech/Token-Creator)

@@ -16,6 +16,11 @@ Set an environment variable to use later:
 
 ## Create a supply of tokens
 
+> NOTE: If you're going to manage the token as a team using multisig in later steps
+> do not add a token supply yet. Wait until after multisig is setup, then you can
+> mint tokens directly to specific accounts. Otherwise minting here will assign
+> those tokens to original authority and multisig won't prevent this.
+
 Create an account to hold the token supply balance:
 
     spl-token create-account $TOKEN_MINT_ADDRESS
