@@ -136,27 +136,28 @@ Here's what else you'll need:
 What is a [Durable Transaction Nonce](https://docs.solana.com/offline-signing/durable-nonce)?
 
     # generate keypair
-    solana-keygen new -o nonce-keypair.json
+    solana-keygen new -o ~/.config/solana/token-nonce-keypair.json
 
-    export NONCE_PUBLIC_KEY=Fjyud2VXixk2vCs4DkBpfpsq48d81rbEzh6deKt7WvPj
+    export NONCE_PUBLIC_KEY=4LZucffEpb21wZifheqhUnxigLQFRRGFUgx7THL8Xxxp
 
-    # create nonce account with 1 SOL
-    solana create-nonce-account nonce-keypair.json 1
+    # create nonce account with 0.1 SOL
+    solana create-nonce-account ~/.config/solana/token-nonce-keypair.json 0.1
 
     # view account details
     solana nonce-account $NONCE_PUBLIC_KEY
 
-    # grab the blockhash
-    export NONCE_BLOCKHASH=6DPt2TfFBG7sR4Hqu16fbMXPj8ddHKkbU4Y3EEEWrC2E
+    # grab the blockhash from the account details
+    export NONCE_BLOCKHASH=8xvGwLYTJhtu67wVf29yE9RDr9vz93TJ7mxNeNd23TdA
 
-    # create absent signers
-    spl-token mint $TOKEN_MINT_ADDRESS 1 $YOUR_WALLET_PUBLIC_KEY_HERE \
+    # create absent signers to kick things off
+    spl-token mint $TOKEN_MINT_ADDRESS 1 $ASSOCIATED_TOKEN_ACCOUNT \
     --owner $MULTISIG_ACCOUNT \
-    --multisig-signer $PUBLIC_KEY_1 \
-    --multisig-signer $PUBLIC_KEY_2 \
+    --multisig-signer $SIGNER_PUBLIC_KEY_1 \
+    --multisig-signer $SIGNER_PUBLIC_KEY_2 \
     --blockhash $NONCE_BLOCKHASH \
-    --fee-payer $YOUR_WALLET_PUBLIC_KEY_HERE \
     --nonce $NONCE_PUBLIC_KEY \
     --nonce-authority $YOUR_WALLET_PUBLIC_KEY_HERE \
+    --fee-payer $YOUR_WALLET_PUBLIC_KEY_HERE \
     --sign-only \
     --mint-decimals 9
+
