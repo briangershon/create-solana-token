@@ -59,11 +59,7 @@ which for this project generated account `Bb2ske4Wpjd5xjkD1MVCnoXuFZDGUJCcehmcYF
 
 Verify the multisig account, options and list of signers on-chain at <https://explorer.solana.com/address/Bb2ske4Wpjd5xjkD1MVCnoXuFZDGUJCcehmcYFoUJVt1>
 
-Set it to an environment variable for later:
-
-    export MULTISIG_ACCOUNT=Bb2ske4Wpjd5xjkD1MVCnoXuFZDGUJCcehmcYFoUJVt1
-
-Then change the mint authority for the token to that new multisig wallet:
+## Change the mint authority for the token to that new multisig wallet:
 
 > CAUTION: You're about to change the mint authority,
 > which impacts who can make changes to your token.
@@ -71,6 +67,7 @@ Then change the mint authority for the token to that new multisig wallet:
 > through the multisig process and can no longer control
 > the token from the initial keypair.
 
+    export MULTISIG_ACCOUNT=Bb2ske4Wpjd5xjkD1MVCnoXuFZDGUJCcehmcYFoUJVt1
     export TOKEN_MINT_ADDRESS=7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
 
     # double-check before running
@@ -86,29 +83,44 @@ Then change the mint authority for the token to that new multisig wallet:
 
 From this point onward, the `spl-token` commands will now use the `--owner` option to point to $MULTISIG_ACCOUNT and multiple `--multisig-signer` options to bring in signers.
 
-First, let's verify we can no longer transfer tokens using the method prior to multisig:
+### Testing new multisig authority
 
-    export YOUR_WALLET_PUBLIC_KEY_HERE=deadbeef....
+Try minting 1 token to `YOUR_WALLET_PUBLIC_KEY_HERE`.
 
-    # let's transfer 50 tokens to your wallet
-    spl-token transfer --fund-recipient $TOKEN_MINT_ADDRESS 50 $YOUR_WALLET_PUBLIC_KEY_HERE
+> You want to explicitly provide a wallet and not use the default `--owner` wallet
+> (which you get if you leave off `YOUR_WALLET_PUBLIC_KEY_HERE`).
+> Otherwise, you're minting to the account that created the coin and could lose access to that.
 
-Now let's successfully transfer 1 token to `YOUR_WALLET_PUBLIC_KEY_HERE` (the RECIPIENT_TOKEN_ACCOUNT_ADDRESS) via the multisig process and see what happens.
+Let's see it fail first by leaving off one of the required signers (since 2 are needed):
 
-1. First try leaving off one of the signers and it should fail since at least 2 are needed
+    export YOUR_WALLET_PUBLIC_KEY_HERE=deadbeef...
 
-   spl-token transfer --fund-recipient $TOKEN_MINT_ADDRESS 1 \
-   $YOUR_WALLET_PUBLIC_KEY_HERE \
-   --owner $MULTISIG_ACCOUNT \
-   --multisig-signer signer-1.json
+    # double-check before running
+    echo $TOKEN_MINT_ADDRESS        # should be 7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD
+    echo $MULTISIG_ACCOUNT          # should be Bb2ske4Wpjd5xjkD1MVCnoXuFZDGUJCcehmcYFoUJVt1
 
-2. Succeed: Then try with the minimum number of signers (2 in this case) to see it work
+    # since we're minting to another wallet (and not the default `--owner`)
+    # an account must be created to receive the token
+    spl-token create-account $TOKEN_MINT_ADDRESS -- ~/.config/solana/your-wallet-keypair.json
 
-   spl-token transfer $TOKEN_MINT_ADDRESS 1 \
-   $YOUR_WALLET_PUBLIC_KEY_HERE \
-   --owner $MULTISIG_ACCOUNT \
-   --multisig-signer signer-1.json \
-   --multisig-signer signer-2.json
+    # to then find associated account for this wallet and token (if it was created previously)
+    solana config set --keypair ~/.config/solana/my-mainnet-wallet.json
+    spl-token accounts -v --owner $YOUR_WALLET_PUBLIC_KEY_HERE | grep $TOKEN_MINT_ADDRESS
+
+    export ASSOCIATED_TOKEN_ACCOUNT=<the address in 2nd column from command above goes here>
+
+    spl-token mint $TOKEN_MINT_ADDRESS 1 \
+        $ASSOCIATED_TOKEN_ACCOUNT \
+        --owner $MULTISIG_ACCOUNT \
+        --multisig-signer ~/.config/solana/signer-1.json
+
+Now let's see it work with minimum number of signers (2 in this case) to see it work
+
+    spl-token mint $TOKEN_MINT_ADDRESS 1 \
+        $ASSOCIATED_TOKEN_ACCOUNT \
+        --owner $MULTISIG_ACCOUNT \
+        --multisig-signer ~/.config/solana/signer-1.json \
+        --multisig-signer ~/.config/solana/signer-2.json
 
 ## Support offline signing with multisig
 
