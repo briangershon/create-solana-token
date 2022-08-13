@@ -31,8 +31,30 @@ To view your public key from the keypair:
 
     solana-keygen pubkey
 
-**Important Final Steps**
+**Important Final Keypair Steps**
 
 1. You will **never** send your `~/.config/solana/coin-keypair.json` keypair file to anyone -- but you must keep this safe and backed-up (say in a password safe). You'll need it to sign transactions. Since you're the only one with access to the private key, your signature can be verified as coming from you and not someone else. If you lose it, or someone else finds it, they will have the power to sign on your behalf.
 
 2. For multisig accounts, you want to provide your team with the public key (derived from that keypair file). Do not send the file, just run `solana-keygen pubkey` and send that public key. The key will be a string of text that looks something like this example: `7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD`.
+
+## Install Solana Token
+
+The `spl-token` program is a command-line interface that requires Rust to be installed.
+
+### Install Rust language
+
+Install latest version of Rust using <https://rustup.rs/>.
+
+In a terminal or command window let's make sure Rust's `cargo` program is installed
+
+    cargo --version
+
+### Install spl-token program
+
+Ok, with run installed and its cargo package manager available
+
+    cargo install spl-token-cli
+
+When that's succesfully, test it by running
+
+    spl-token --version

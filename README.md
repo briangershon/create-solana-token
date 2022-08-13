@@ -18,6 +18,7 @@ The token image was created from a photo by <https://unsplash.com/@alexb>.
 - [Create token](./docs/create-token.md) and mint them
 - [Add metadata](./docs/add-metadata.md) for your token and host on Arweave
 - [Test token](./docs/test-token.md)
+- Here's a [run through of the multisig signing process](./docs/multisig-signing-process.md)
 
 ## Steps for creating a multisig mint authority for token
 
@@ -27,7 +28,9 @@ The token image was created from a photo by <https://unsplash.com/@alexb>.
 
 Scenario: You've been asked to be one of the official approvers of token minting.
 
-You can generate your keypair and public key by following [Getting started](./docs/getting-started.md).
+- you can generate your keypair and public key by following [Getting started](./docs/getting-started.md).
+
+- then [run through the multisig signing process](./docs/multisig-signing-process.md)
 
 ## Credits
 
