@@ -37,7 +37,7 @@ To view your public key from the keypair:
 
 2. For multisig accounts, you want to provide your team with the public key (derived from that keypair file). Do not send the file, just run `solana-keygen pubkey` and send that public key. The key will be a string of text that looks something like this example: `7uVii1LGC5jCJAgHHmLqKZP3bpNtJS6ywHW6CUSocuyD`.
 
-## Install Solana Token
+## Install Solana Token Program
 
 The `spl-token` program is a command-line interface that requires Rust to be installed.
 

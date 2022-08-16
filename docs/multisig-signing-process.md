@@ -9,7 +9,7 @@ Ensure you have the latest version of your tools.
     solana --version            # ours is 1.10.32
     spl-token --version         # ours is 2.0.16
 
-Thse latest versions were needed recently when the format of the Nonce changed. Without having latest versions you may see "data account" errors.
+These latest versions were needed recently when the format of the Nonce changed. Without having latest versions you may see "data account" errors.
 
 ## Set keypair for as upcoming fee payer and Nonce authority
 

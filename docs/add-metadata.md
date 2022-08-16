@@ -56,7 +56,7 @@ Find the token metadata here in [token_metadata.json](./token/token_metadata.jso
 
 You have two choices.
 
-1. Use script, but change script to call `updateMetadata()`
+1. Use script, but manually change `./scripts/create-metadata.ts` script to call `updateMetadata()` and then `npm run create-metadata`.
 
 2. You can update metadata via <https://token-creator-lac.vercel.app/update>. This method won't create initial metadata after token is created, hence needing our script. Note: you'll **first need to import your filesystem wallet** into your Phantom wallet so you have permissions to update metadata.
 
